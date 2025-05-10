@@ -1,0 +1,69 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f2937;
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.search {
+  flex-grow: 1;
+  max-width: 300px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.logout {
+  all: unset;
+  /* Elimină toate stilurile implicite ale butonului */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.logout:hover {
+  color: #93c5fd;
+}
+
+/* 🔁 RESPONSIVE */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 12px;
+  }
+
+  .search {
+    width: 100%;
+    max-width: 100%;
+    margin: 8px 0;
+  }
+
+  .logout {
+    align-self: flex-end;
+  }
+}

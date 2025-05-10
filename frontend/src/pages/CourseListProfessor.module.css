@@ -1,0 +1,223 @@
+.container {
+  padding-top: 90px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 40px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.searchInput {
+  width: 40%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.addBtn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.addBtn:hover {
+  background-color: #059669;
+}
+
+.logoutBtn {
+  all: unset;
+  /* Elimină toate stilurile implicite ale butonului */
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.loginBtn:hover {
+  color: #93c5fd;
+}
+
+.courseList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* 👈 This is the missing piece */
+  gap: 20px;
+}
+
+.courseCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.courseCard h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.courseCard p {
+  margin: 3px 0;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.actions .delete {
+  background-color: #ef4444;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.popupForm {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  /* 👈 limits height */
+  overflow-y: auto;
+  /* 👈 enables scrolling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.popupForm input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.popupActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.popupActions button {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: white;
+}
+
+.popupActions button[type="button"] {
+  background-color: #9ca3af;
+}
+
+.popupActions button[type="button"]:hover {
+  background-color: #6b7280;
+}
+
+.popupFormFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popupFieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popupLabel {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.popupInput {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.popupInput,
+.popupForm select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.popupForm::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popupForm::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
