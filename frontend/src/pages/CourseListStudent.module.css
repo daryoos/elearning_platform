@@ -1,100 +1,228 @@
 .container {
-    padding-top: 90px; /* Lasă loc pentru navbar-ul fix */
-    padding-inline: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* FILTRE */
-  
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 30px;
-    justify-content: center;
-  }
-  
-  .filters input,
-  .filters select,
-  .filters button {
-    padding: 8px 12px;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-    outline: none;
-  }
-  
-  .filters button {
-    background-color: #2563eb;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s ease;
-  }
-  
-  .filters button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  .resetButton {
-    background-color: #e5e7eb;
-    color: #1f2937;
-    border: 1px solid #d1d5db;
-  }
-  
-  .resetButton:hover {
-    background-color: #d1d5db;
-  }
-  
-  /* CURSURI */
-  
-  .courseCard {
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-  }
-  
-  .courseCard:hover {
-    transform: scale(1.01);
-  }
-  
-  .courseCard h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    color: #111827;
-  }
-  
-  .courseCard p {
-    margin: 4px 0;
-    color: #374151;
-    font-size: 0.95rem;
-  }
-  
-  .enrollButton {
-    margin-top: 10px;
-    background-color: #10b981;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .enrollButton:hover {
-    background-color: #059669;
-  }
-  
-  .unavailable {
-    margin-top: 10px;
-    color: #ef4444;
-    font-weight: bold;
-  }
-  
+  padding-top: 90px;
+  /* Lasă loc pentru navbar-ul fix */
+  padding-inline: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FILTRE */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.filters button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #1d4ed8;
+}
+
+.resetButton {
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+}
+
+.resetButton:hover {
+  background-color: #d1d5db;
+}
+
+/* CURSURI */
+
+.courseCard {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.courseCard:hover {
+  transform: scale(1.01);
+}
+
+.courseCard h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #111827;
+}
+
+.courseCard p {
+  margin: 4px 0;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.enrollButton {
+  margin-top: 10px;
+  background-color: #10b981;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.enrollButton:hover {
+  background-color: #059669;
+}
+
+.unavailable {
+  margin-top: 10px;
+  color: #ef4444;
+  font-weight: bold;
+}
+
+/* CHAT */
+.chatToggleButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+.chatToggleButton:hover {
+  background-color: #4338ca;
+}
+
+.chatIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.chatContainer {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  width: 320px;
+  max-height: 450px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.chatMessages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f9fafb;
+}
+
+.chatBubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.userBubble {
+  align-self: flex-end;
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  border-bottom-right-radius: 4px;
+}
+
+.aiBubble {
+  align-self: flex-start;
+  background-color: #e5e7eb;
+  color: #111827;
+  border-bottom-left-radius: 4px;
+}
+
+.chatInputContainer {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #e5e7eb;
+  gap: 8px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.chatSendButton {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chatSendButton:hover {
+  background-color: #4338ca;
+}
+
+.chatTextarea {
+  flex: 1;
+  resize: none;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  background-color: #f3f4f6;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  line-height: 1.4;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+.chatTextarea:focus {
+  border-color: #4f46e5;
+  background-color: #fff;
+}

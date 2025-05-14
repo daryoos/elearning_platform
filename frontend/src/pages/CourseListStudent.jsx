@@ -225,79 +225,67 @@ const CourseListStudent = () => {
         ))
       )}
 
-      {/* Chat Toggle Button */}
+      // Chat Toggle Button
       <button
         onClick={() => setChatOpen((prev) => !prev)}
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          left: "20px",
-          zIndex: 1000,
-          backgroundColor: "#4f46e5",
-          color: "white",
-          border: "none",
-          borderRadius: "50%",
-          width: "60px",
-          height: "60px",
-          fontSize: "24px",
-          cursor: "pointer",
-        }}
+        className={styles.chatToggleButton}
+        aria-label="Deschide chat"
       >
-        💬
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="white"
+          className={styles.chatIcon}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M7.5 8.25h9m-9 3.75h5.25M21 12a9 9 0 11-16.5-5.74c.2-.3.65-.36.9-.13l.63.64a1.5 1.5 0 002.25-.18l.36-.48a.75.75 0 011.23 0l.36.48a1.5 1.5 0 002.25.18l.63-.64c.25-.23.7-.17.9.13A9 9 0 0121 12z"
+          />
+        </svg>
       </button>
 
-      {/* Chat Panel */}
       {chatOpen && (
-        <div
-          style={{
-            position: "fixed",
-            bottom: "90px",
-            left: "20px",
-            width: "300px",
-            maxHeight: "400px",
-            overflowY: "auto",
-            backgroundColor: "white",
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            padding: "10px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-            zIndex: 999,
-          }}
-        >
-          <div style={{ maxHeight: "300px", overflowY: "auto", marginBottom: "10px" }}>
+        <div className={styles.chatContainer}>
+          <div className={styles.chatMessages}>
             {chatMessages.map((msg, idx) => (
-              <div key={idx} style={{ marginBottom: "8px" }}>
-                <strong>{msg.role === "user" ? "Tu" : "AI"}:</strong> {msg.content}
+              <div
+                key={idx}
+                className={`${styles.chatBubble} ${msg.role === "user" ? styles.userBubble : styles.aiBubble
+                  }`}
+              >
+                {msg.content}
               </div>
             ))}
           </div>
-          <input
-            type="text"
-            value={chatInput}
-            onChange={(e) => setChatInput(e.target.value)}
-            placeholder="Scrie un mesaj..."
-            style={{ width: "100%", marginBottom: "5px" }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") handleSendMessage();
-            }}
-          />
-          <button
-            onClick={handleSendMessage}
-            disabled={isSending || !chatInput.trim()}
-            style={{
-              width: "100%",
-              backgroundColor: "#4f46e5",
-              color: "white",
-              border: "none",
-              padding: "8px",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            Trimite
-          </button>
+          <div className={styles.chatInputContainer}>
+            <textarea
+              className={styles.chatTextarea}
+              rows={1}
+              value={chatInput}
+              onChange={(e) => setChatInput(e.target.value)}
+              placeholder="Scrie un mesaj..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSendMessage();
+                }
+              }}
+            />
+            <button
+              onClick={handleSendMessage}
+              disabled={isSending || !chatInput.trim()}
+              className={styles.chatSendButton}
+            >
+              Trimite
+            </button>
+          </div>
         </div>
       )}
+
+
     </div>
   );
 };
